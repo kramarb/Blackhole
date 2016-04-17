@@ -1,6 +1,10 @@
 #include <iostream>
-
+#include <SDL.h>
 
 int main() {
-    std::cout << "Hello world" << std::endl;    
+    if(SDL_Init(SDL_INIT_EVERYTHING) != 0) {
+        std::cout << "SDL init failed" << std::endl;
+    }
+
+    SDL_Quit();
 }

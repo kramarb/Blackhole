@@ -1,9 +1,10 @@
 cmake_minimum_required(VERSION 3.5)
 project("Blackhole")
 
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/sdl2-cmake-scripts")
 set(SOURCE_DIR "${CMAKE_SOURCE_DIR}/src")
-
+find_package(SDL2 REQUIRED)
 set(BLACKHOLE_SRCS "${SOURCE_DIR}/main.cpp")
-message("Hello")
-message(${BLACKHOLE_SRCS})
 add_executable(blackhole_engine ${BLACKHOLE_SRCS})
+target_include_directories(blackhole_engine PRIVATE ${SDL2_INCLUDE_DIR})
+target_link_libraries(blackhole_engine ${SDL2_LIBRARY})

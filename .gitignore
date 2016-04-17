@@ -29,3 +29,10 @@
 
 # VIM Swap files
 *.swp
+
+#Python compiled files
+.*.pyc
+*.pyc
+
+#Build dir
+build/
